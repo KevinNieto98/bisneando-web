@@ -82,12 +82,16 @@ export default function ({ params }: Props) {
       </div>
 
     </div>
-      <h1 className={` ${titleFont.className} antialiased font-bold text-xl`}>
+
+    <div className='mx-5'>
+
+      <h1 className={` ${titleFont.className} antialiased font-bold text-xl mb-2`}>
           Productos Similares
         </h1>
       <ProductSimilares 
         products={ products }
-      />
+        />
+    </div>
   </>
   );
 }
