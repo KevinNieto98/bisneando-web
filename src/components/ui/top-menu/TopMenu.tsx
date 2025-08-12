@@ -12,13 +12,13 @@ export const TopMenu = () => {
   const openSideMenu = useUIStore( state => state.openSideMenu );
 
   return (
-    <nav className="flex  justify-between  py-1 px-3 items-center w-full">
+    <nav className="flex  justify-between  py-1 items-center w-full">
 
       {/* Logo */ }
       <div>
         <Link
           href="/">
-              <img src="/bisneando.svg" alt="Bisneando Logo" className="inline-block w-64 h-12 align-middle" />
+              <img src="/bisneando.svg" alt="Bisneando Logo" className="inline-block w-64 h-12 " />
         </Link>
       </div>
 

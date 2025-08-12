@@ -1,4 +1,4 @@
-import { ProductGrid, Title } from '@/components';
+import { CarouselBanner, ProductGrid, Title } from '@/components';
 import { initialData } from '@/seed/seed';
 
 
@@ -9,6 +9,10 @@ const products = initialData.products;
 export default function Home() {
   return (
     <>
+      <CarouselBanner />
+      <div 
+        className='mx-5'
+      >
       <Title
         title="Tienda"
         subtitle="Todos los productos"
@@ -18,6 +22,9 @@ export default function Home() {
       <ProductGrid 
         products={ products }
       />
+
+
+      </div>
       
     </>
   );
