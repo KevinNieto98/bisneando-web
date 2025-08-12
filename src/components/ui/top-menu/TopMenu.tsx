@@ -1,9 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { IoSearchOutline, IoCartOutline } from 'react-icons/io5';
+import { IoSearchOutline, IoCartOutline,  } from 'react-icons/io5';
+import { HiOutlineUserCircle } from 'react-icons/hi';
+//import {  FaUserCircle } from 'react-icons/fa';
 
-import { titleFont } from '@/config/fonts';
 import { useUIStore } from '@/store';
 
 
@@ -23,13 +24,13 @@ export const TopMenu = () => {
       </div>
 
       {/* Center Menu */ }
-      <div className="hidden sm:block">
+      {/* <div className="hidden sm:block">
 
         <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" href="/category/men">Hombres</Link>
         <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" href="/category/women">Mujeres</Link>
         <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" href="/category/kid">Niños</Link>
 
-      </div>
+      </div> */}
 
 
       {/* Search, Cart, Menu */ }
@@ -50,8 +51,8 @@ export const TopMenu = () => {
 
         <button
           onClick={ openSideMenu }
-          className="m-2 p-2 rounded-md transition-all hover:bg-gray-100">
-          Menú
+          className="mx-2 px-2 rounded-md transition-all hover:bg-gray-100">
+            <HiOutlineUserCircle className="w-7 h-7" />
         </button>
 
       </div>

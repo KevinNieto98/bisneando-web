@@ -8,7 +8,7 @@ import './globals.css';
 
 
 export const metadata: Metadata = {
-  title: 'Teslo | Shop',
+  title: 'Bisneando Honduras',
   description: 'Una tienda virtual de productos',
 }
 
