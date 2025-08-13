@@ -12,6 +12,7 @@ export * from './ui/footer/Footer';
 export * from './product/slideshow/ProductSlideshow';
 export * from './product/slideshow/ProductMobileSlideshow';
 export * from './productos-similares'
+export * from './search'
 ;
 
 export * from './product/quantity-selector/QuantitySelector';

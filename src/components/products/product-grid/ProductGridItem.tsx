@@ -23,21 +23,21 @@ export const ProductGridItem = ( { product }: Props ) => {
         <Image
           src={ `/products/${ displayImage }` }
           alt={ product.title }
-          className="w-full object-cover rounded"
-          width={ 500 }
-          height={ 500 }
+          className="w-full object-cover rounded h-40 md:h-[300px]"
+          width={ 300 }
+          height={ 300 }
           onMouseEnter={ () => setDisplayImage( product.images[1] )  }
           onMouseLeave={ () => setDisplayImage( product.images[0] ) }
         />
       </Link>
 
-      <div className="p-4 flex flex-col">
+      <div className="p-2 md:p-4 flex flex-col">
         <Link
-          className="hover:text-blue-600"
+          className="hover:text-blue-600 text-xs md:text-base"
           href={ `/product/${ product.slug }` }>
           { product.title }
         </Link>
-        <span className="font-bold">${ product.price }</span>
+        <span className="font-bold text-xs md:text-base">${ product.price }</span>
       </div>
 
     </div>

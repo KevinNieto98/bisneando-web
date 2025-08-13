@@ -58,7 +58,7 @@ export const ProductSimilares = ({ products }: Props) => {
       {/* Botón Anterior */}
       <button
         onClick={handlePrev}
-        className="absolute left-0 top-[40%] -translate-y-1/2 z-10 bg-white/80 hover:bg-gray-400 rounded-full p-2 shadow-md"
+        className="absolute left-0 top-[40%] -translate-y-1/2 z-10 bg-white/80 hover:bg-gray-400 rounded-full px-2 shadow-md"
       >
         <FaChevronLeft size={24} />
       </button>
@@ -71,11 +71,11 @@ export const ProductSimilares = ({ products }: Props) => {
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-        <div className="flex gap-6 mb-10">
+        <div className="flex gap-3 md:gap-6 mb-2">
           {duplicatedProducts.map((product, index) => (
             <div
               key={`${product.slug}-${index}`}
-              className="flex-shrink-0 w-60"
+              className="flex-shrink-0 w-40 md:w-60"
             >
               <ProductGridItem product={product} />
             </div>
