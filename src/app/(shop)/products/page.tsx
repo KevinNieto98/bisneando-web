@@ -1,9 +1,22 @@
 
-import { ProductGrid, Search } from '@/components';
+import { CategoriesContainer, ProductGrid, Search } from '@/components';
 import { initialData } from '@/seed/seed';
-import { Chip } from '@/components/Chip';
+import { Pagination } from '@heroui/react';
 
 const products = initialData.products;
+const categories = [{
+  id_categoria: 1,
+  nombre_categoria: 'Tecnologia'
+},
+{
+  id_categoria: 2,
+  nombre_categoria: 'Hogar'
+},
+{
+  id_categoria: 3,
+  nombre_categoria: 'Moda'
+}
+]
 
 export default function () {
   return (
@@ -15,17 +28,23 @@ export default function () {
           products={products}
         />
       </div>
-      <div className="flex gap-4 mx-2 sm:mx-5 justify-center items-center overflow-x-auto whitespace-nowrap py-2">
-        <Chip color="default">Default</Chip>
-        <Chip color="primary">Primary</Chip>
-        <Chip color="secondary">Secondary</Chip>
-        <Chip color="success">Success</Chip>
-        <Chip color="warning">Warning</Chip>
-        <Chip color="danger">Danger</Chip>
-      </div>
+
+      <CategoriesContainer categories={categories} />
+
       <ProductGrid
         products={products}
       />
+      <div className='flex justify-center items-center'>
+        <Pagination 
+          showControls 
+          initialPage={1} 
+          total={10} 
+            classNames={{
+    item: "data-[selected=true]:bg-yellow-400 data-[selected=true]:text-white"
+  }}
+        />
+
+      </div>
     </div>
   );
 }

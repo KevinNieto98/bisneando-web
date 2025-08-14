@@ -1,12 +1,10 @@
-import { CarouselBanner, Footer, Sidebar, TopMenu } from '@/components';
-import { HeroUIProvider } from '@heroui/react';
+import {  Footer, Sidebar, TopMenu } from '@/components';
 
 export default function ShopLayout({ children }: {
   children: React.ReactNode;
 }) {
   return (
     <main className="min-h-screen">
-      <HeroUIProvider>
 
         <TopMenu />
         <Sidebar />
@@ -18,7 +16,7 @@ export default function ShopLayout({ children }: {
         </div>
 
         <Footer />
-      </HeroUIProvider>
+      
     </main>
   );
 }

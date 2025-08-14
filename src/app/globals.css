@@ -8,6 +8,11 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+
+[data-selected="true"], .pagination .active, .PaginationItem--active {
+  background-color: #facc15 !important; /* Tailwind yellow-400 */
+  color: #fff !important;
+}
 /* 
 @media (prefers-color-scheme: dark) {
   :root {
