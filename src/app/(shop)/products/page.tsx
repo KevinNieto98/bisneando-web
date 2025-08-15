@@ -1,7 +1,7 @@
 
-import { CategoriesContainer, ProductGrid, Search } from '@/components';
+import { CategoriesContainer, Pagination, ProductGrid, Search } from '@/components';
+import { PaginationContainer } from '@/components/pagination-container';
 import { initialData } from '@/seed/seed';
-import { Pagination } from '@heroui/react';
 
 const products = initialData.products;
 const categories = [{
@@ -34,17 +34,7 @@ export default function () {
       <ProductGrid
         products={products}
       />
-      <div className='flex justify-center items-center'>
-        <Pagination 
-          showControls 
-          initialPage={1} 
-          total={10} 
-            classNames={{
-    item: "data-[selected=true]:bg-yellow-400 data-[selected=true]:text-white"
-  }}
-        />
-
-      </div>
+      <PaginationContainer />
     </div>
   );
 }

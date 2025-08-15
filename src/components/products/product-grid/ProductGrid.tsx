@@ -1,3 +1,4 @@
+'use client';
 import { Product } from '@/interfaces';
 import { ProductGridItem } from './ProductGridItem';
 

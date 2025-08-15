@@ -4,8 +4,6 @@ import { inter } from '@/config/fonts';
 
 
 import './globals.css';
-import { HeroUIProvider } from '@heroui/react';
-
 
 
 export const metadata: Metadata = {
@@ -20,10 +18,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-            <HeroUIProvider>
 
       <body className={inter.className}>{children}</body>
-      </HeroUIProvider>
     </html>
   )
 }
