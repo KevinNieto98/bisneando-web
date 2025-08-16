@@ -1,63 +1,76 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { IoSearchOutline, IoCartOutline,  } from 'react-icons/io5';
+import { IoCartOutline } from 'react-icons/io5';
 import { HiOutlineUserCircle } from 'react-icons/hi';
-//import {  FaUserCircle } from 'react-icons/fa';
-
 import { useUIStore } from '@/store';
 
+type User = { name: string | null };
 
 export const TopMenu = () => {
+  const openSideMenu = useUIStore((state) => state.openSideMenu);
 
-  const openSideMenu = useUIStore( state => state.openSideMenu );
+  const [user, setUser] = useState<User>({ name: 'Kevin' });
+  const [cartCount, setCartCount] = useState<number>(0);
+
+  // Fallback rápido: lee nombre y conteo de carrito desde localStorage
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const storedName = localStorage.getItem('userName'); // p.ej. "ChatGPT"
+    const storedCart = parseInt(localStorage.getItem('cart_count') || '0', 10);
+    setUser({ name: 'Kevin Nieto' });
+    setCartCount(Number.isFinite(storedCart) ? storedCart : 0);
+  }, []);
 
   return (
-    <nav className="flex  justify-between  py-1 items-center w-full">
-
-      {/* Logo */ }
-      <div>
-        <Link
-          href="/">
-              <img src="/bisneando.svg" alt="Bisneando Logo" className="inline-block w-64 h-12 " />
+    <nav className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2">
+        {/* Logo */}
+        <Link href="/" aria-label="Ir al inicio" className="inline-flex items-center">
+          <img src="/bisneando.svg" alt="Bisneando Logo" className="h-10 w-auto" />
         </Link>
+
+        {/* Acciones */}
+        <div className="flex items-center gap-2">
+          {/* Carrito */}
+          <Link
+            href="/cart"
+            aria-label="Carrito"
+            className="relative rounded-md p-2 transition hover:bg-zinc-100"
+          >
+            {cartCount > 0 && (
+              <span className="absolute -right-1 -top-1 min-w-[18px] rounded-full bg-yellow-400 px-1 text-center text-[11px] font-bold leading-5 text-black">
+                {cartCount}
+              </span>
+            )}
+            <IoCartOutline className="h-6 w-6" />
+          </Link>
+
+          {/* Menú / Login con tu lógica */}
+          {user.name ? (
+            // Si está logueado: botón que ABRE el side menu
+            <button
+              onClick={openSideMenu}
+              aria-label="Abrir menú de cuenta"
+              className="inline-flex items-center gap-2 rounded-full bg-zinc-100 px-3 py-1.5 text-zinc-700 ring-1 ring-zinc-200 transition hover:bg-zinc-200"
+            >
+              <HiOutlineUserCircle className="h-5 w-5" />
+              <span className="hidden sm:inline">Hola {user.name}</span>
+            </button>
+          ) : (
+            // Si NO está logueado: ir al login
+            <Link
+              href="/auth/login"
+              aria-label="Iniciar sesión"
+              className="inline-flex items-center gap-2 rounded-full bg-yellow-400 px-3 py-1.5 font-semibold text-black transition hover:bg-yellow-500"
+            >
+              <HiOutlineUserCircle className="h-5 w-5" />
+              <span className="hidden sm:inline">Iniciar sesión</span>
+            </Link>
+          )}
+        </div>
       </div>
-
-      {/* Center Menu */ }
-      {/* <div className="hidden sm:block">
-
-        <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" href="/category/men">Hombres</Link>
-        <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" href="/category/women">Mujeres</Link>
-        <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" href="/category/kid">Niños</Link>
-
-      </div> */}
-
-
-      {/* Search, Cart, Menu */ }
-      <div className="flex items-center">
-
-        <Link href="/search" className="mx-2">
-          <IoSearchOutline className="w-5 h-5" />
-        </Link>
-
-        <Link href="/cart" className="mx-2">
-          <div className="relative">
-            <span className="absolute text-xs px-1 rounded-full font-bold -top-2 -right-2 bg-blue-700 text-white">
-              3
-            </span>
-            <IoCartOutline className="w-5 h-5" />
-          </div>
-        </Link>
-
-        <button
-          onClick={ openSideMenu }
-          className="mx-2 px-2 rounded-md transition-all hover:bg-gray-100">
-            <HiOutlineUserCircle className="w-7 h-7" />
-        </button>
-
-      </div>
-
-
     </nav>
   );
 };
