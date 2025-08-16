@@ -1,17 +1,38 @@
 export interface Product {
-   id_producto: number;
+  id_producto: number;
+  title: string;
   description: string;
   images: string[];
-  inStock: number;
-  price: number;
-  sizes: Size[];
-  slug: string;
-  tags: string[];
-  title: string;
-  type: Type;
-  gender: Category;
+  inStock: number;        // cantidad disponible
+  price: number;          // precio
+  slug: string;           // nombre + id (kebab-case)
+  tags: string[];         // palabras clave
+  isActive: boolean;      // activo o no
+  category: Category;     // categoría principal
+  subcategory?: Subcategory; // subcategoría opcional
+  brand?: string;         // marca opcional
+  specs?: Record<string, string | number | boolean>; // atributos técnicos
 }
 
-export type Category = 'men'|'women'|'kid'|'unisex';
-export type Size = 'XS'|'S'|'M'|'L'|'XL'|'XXL'|'XXXL';
-export type Type = 'shirts'|'pants'|'hoodies'|'hats';
+export type Category =
+  | 'technology'
+  | 'appliances'
+  | 'home'
+  | 'fashion'
+  | 'beauty'
+  | 'sports'
+  | 'toys'
+  | 'groceries'
+  | 'automotive'
+  | 'office';
+
+export type Subcategory =
+  | 'smart-home'
+  | 'security-cameras'
+  | 'smart-plugs'
+  | 'smart-lighting'
+  | 'smart-speakers'
+  | 'audio'
+  | 'computers'
+  | 'phones'
+  | 'accessories';
