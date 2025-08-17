@@ -109,7 +109,7 @@ export const Sidebar = () => {
             </p>
             {user.name ? (
               <Link
-                href="/account/edit"
+                href="/account"
                 onClick={closeMenu}
                 className="text-sm text-blue-600 hover:underline"
               >
@@ -133,16 +133,7 @@ export const Sidebar = () => {
         {user.name ? (
           <div className="mt-4 space-y-2">
             <Link
-              href="/account"
-              onClick={closeMenu}
-              className="flex items-center gap-3 rounded-xl p-3 text-zinc-800 transition hover:bg-zinc-50"
-            >
-              <IoPersonOutline size={24} />
-              <span className="text-base">Perfil</span>
-            </Link>
-
-            <Link
-              href="/account/addresses"
+              href="/address"
               onClick={closeMenu}
               className="flex items-center gap-3 rounded-xl p-3 text-zinc-800 transition hover:bg-zinc-50"
             >

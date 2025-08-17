@@ -51,8 +51,8 @@ export default function ProductPage({ params }: Props) {
 
   return (
     <>
-      {/* Desktop sin scroll de página; móvil fluye para mostrar similares abajo */}
-      <div className="grid md:h-[calc(100vh-80px)] grid-cols-1 gap-6 px-4 py-4 md:grid-cols-2 md:px-10 lg:gap-10">
+      {/* Desktop altura mínima; móvil fluye para mostrar similares abajo */}
+      <div className="grid md:min-h-[calc(100vh-80px)] grid-cols-1 gap-6 px-4 py-4 md:grid-cols-2 md:px-10 lg:gap-10 pb-8 md:pb-12">
         {/* Slideshow (izquierda) */}
         <div className="flex items-center justify-center">
           {/* Desktop */}
@@ -176,7 +176,7 @@ export default function ProductPage({ params }: Props) {
       </div>
 
       {/* Similares siempre abajo en móvil */}
-      <div className="px-4 pb-6 md:hidden">
+      <div className="px-4 pb-24 md:hidden">
         <h2 className={`${titleFont.className} text-base font-bold mt-2`}>
           Productos Similares
         </h2>

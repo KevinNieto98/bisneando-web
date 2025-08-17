@@ -14,7 +14,7 @@ const images = [
 
 export const CarouselBanner = () => {
     return (
-        <div className="mx-4 xl:x-5">
+        <div className="">
             <div className="w-full max-w-[1200px] h-[230px] md:h-[300px] lg:h-[400px] mx-auto rounded-3xl overflow-hidden">
                 <Swiper
                     pagination={{ clickable: true }}

@@ -131,7 +131,7 @@ export const initialData: SeedData = {
       title: 'Amazon Echo Pop',
       description:
         'Altavoz inteligente con diseño moderno y sonido de calidad. Controla dispositivos, escucha música, obtén noticias y realiza tareas con solo usar tu voz gracias a Alexa.',
-      images: ['Amazon-Echo-Pop_2.jpg', 'Amazon-Echo-Pop_3.jpg', 'Amazon-Echo-Pop_4.png'],
+      images: ['Amazon-Echo-Pop_2.jpg', 'Amazon-Echo-Pop_3.jpg'],
       inStock: 2,
       price: 1480,
       slug: 'amazon-echo-pop-6',

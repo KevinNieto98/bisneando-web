@@ -1,33 +1,54 @@
 import { titleFont } from '@/config/fonts';
 import Link from 'next/link';
+import Image from 'next/image';
+import { FaCcVisa, FaCcMastercard, FaBitcoin, FaFacebook, FaInstagram, FaTiktok, FaPhone, FaEnvelope, FaShoppingCart } from 'react-icons/fa';
 
 export const Footer = () => {
   return (
-    <div className="flex w-full justify-center text-xs mb-10">
+    <footer className="bg-[#0A2A5E] text-white py-10">
+      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        {/* Contacto */}
+        <div>
+          <h3 className="font-semibold text-lg mb-4">Contacto</h3>
+          <p className="text-sm mb-2 flex items-center gap-2"><FaPhone /> 504 3190-4443</p>
+          <p className="text-sm mb-2 flex items-center gap-2"><FaEnvelope /> servicioalcliente@bisneando.com</p>
+          <p className="text-sm flex items-center gap-2"><FaShoppingCart /> compras@bisneando.com</p>
+        </div>
 
-      <Link
-        href='/'
-      >
-        <span className={`${ titleFont.className } antialiased font-bold `}>Teslo </span>
-        <span>| shop </span>
-        <span>© { new Date().getFullYear() }</span>
-      </Link>
+        {/* Términos y Condiciones */}
+        <div>
+          <h3 className="font-semibold text-lg mb-4">Términos y Condiciones</h3>
+          <ul className="space-y-2 text-sm">
+            <li><Link href="/politicas" className="hover:underline">Políticas de Envío</Link></li>
+            <li><Link href="/privacidad" className="hover:underline">Política de Privacidad</Link></li>
+            <li><Link href="/terminos" className="hover:underline">Términos y Condiciones</Link></li>
+          </ul>
+        </div>
 
-      <Link
-        href='/'
-        className="mx-3"
-      >
-        Privacidad & Legal
-      </Link>
+        {/* Métodos de Pago */}
+        <div>
+          <h3 className="font-semibold text-lg mb-4">Métodos de Pago</h3>
+          <div className="flex gap-4 text-3xl">
+            <FaCcVisa />
+            <FaCcMastercard />
+            <FaBitcoin />
+          </div>
+        </div>
 
-      <Link
-        href='/'
-        className="mx-3"
-      >
-        Ubicaciones
-      </Link>
+        {/* Redes Sociales */}
+        <div>
+          <h3 className="font-semibold text-lg mb-4">Nuestras Redes Sociales</h3>
+          <div className="flex gap-4 text-2xl">
+            <Link href="https://facebook.com" target="_blank" aria-label="Facebook"><FaFacebook /></Link>
+            <Link href="https://instagram.com" target="_blank" aria-label="Instagram"><FaInstagram /></Link>
+            <Link href="https://tiktok.com" target="_blank" aria-label="TikTok"><FaTiktok /></Link>
+          </div>
+        </div>
+      </div>
 
-
-    </div>
+      <div className="text-center text-xs text-zinc-300 mt-8">
+        <p>© Bisneando {new Date().getFullYear()}. Todos los derechos reservados</p>
+      </div>
+    </footer>
   )
 }
