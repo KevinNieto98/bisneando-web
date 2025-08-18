@@ -187,7 +187,7 @@ export default function CartPage() {
 
             <div className="mt-5 space-y-3">
               <Link
-                href="/checkout/address"
+                href="/checkout"
                 className="flex h-12 w-full items-center justify-center rounded-full bg-blue-600 font-semibold text-white transition hover:bg-blue-700 active:scale-[0.99] gap-2"
               >
                 {/* ícono */}
@@ -198,7 +198,7 @@ export default function CartPage() {
               </Link>
 
               <Link
-                href="/"
+                href="/products"
                 className="flex h-12 w-full items-center justify-center rounded-full bg-white font-semibold text-blue-600 ring-1 ring-zinc-200 transition hover:bg-zinc-50 active:scale-[0.99] gap-2"
               >
                 {/* ícono */}
