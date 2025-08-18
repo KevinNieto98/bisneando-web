@@ -358,7 +358,7 @@ export default function CheckoutRedesignPage() {
                   className={`btn-primary w-full flex justify-center items-center rounded-xl py-3 text-center ${
                     canPlaceOrder ? '' : 'pointer-events-none opacity-60'
                   }`}
-                  href={canPlaceOrder ? '/orders/123' : '#'}
+                  href={canPlaceOrder ? '/success-order' : '#'}
                   aria-disabled={!canPlaceOrder}
                 >
                   Colocar orden
