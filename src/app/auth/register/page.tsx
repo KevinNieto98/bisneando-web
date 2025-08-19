@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function LoginPage() {
+export default function RegisterPage() {
   return (
     <div className="relative flex items-center justify-center min-h-screen bg-gradient-to-r from-yellow-400 to-yellow-500 overflow-hidden">
       
@@ -16,7 +16,7 @@ export default function LoginPage() {
       />
 
       {/* Contenido principal */}
-      <div className="relative bg-white p-8 rounded-2xl shadow-2xl w-full max-w-sm">
+      <div className="relative bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md">
         <div className="flex justify-center mb-6">
           <Image
             src="/bisneando.svg"
@@ -28,10 +28,41 @@ export default function LoginPage() {
         </div>
 
         <h2 className="text-3xl font-bold text-gray-800 text-center mb-6">
-          Iniciar Sesión
+          Crear Cuenta
         </h2>
 
         <form className="space-y-4">
+          {/* Nombre */}
+          <div>
+            <label className="block text-gray-700 font-medium">Nombre</label>
+            <input
+              type="text"
+              placeholder="Tu nombre"
+              className="w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:outline-none"
+            />
+          </div>
+
+          {/* Apellido */}
+          <div>
+            <label className="block text-gray-700 font-medium">Apellido</label>
+            <input
+              type="text"
+              placeholder="Tu apellido"
+              className="w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:outline-none"
+            />
+          </div>
+
+          {/* Teléfono */}
+          <div>
+            <label className="block text-gray-700 font-medium">Número de Teléfono</label>
+            <input
+              type="tel"
+              placeholder="+504 9999-9999"
+              className="w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:outline-none"
+            />
+          </div>
+
+          {/* Correo */}
           <div>
             <label className="block text-gray-700 font-medium">Correo</label>
             <input
@@ -41,6 +72,7 @@ export default function LoginPage() {
             />
           </div>
 
+          {/* Contraseña */}
           <div>
             <label className="block text-gray-700 font-medium">Contraseña</label>
             <input
@@ -50,28 +82,29 @@ export default function LoginPage() {
             />
           </div>
 
+          {/* Confirmar Contraseña */}
+          <div>
+            <label className="block text-gray-700 font-medium">Confirmar Contraseña</label>
+            <input
+              type="password"
+              placeholder="••••••••"
+              className="w-full px-4 py-2 mt-1 border border-gray-300 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:outline-none"
+            />
+          </div>
+
+          {/* Botón de registro */}
           <button
             type="submit"
             className="w-full bg-yellow-500 text-white py-2 rounded-lg font-semibold hover:bg-yellow-600 transition duration-300"
           >
-            Entrar
+            Registrarse
           </button>
-
-          {/* Botón de Olvidaste tu contraseña */}
-          <div className="text-center mt-2">
-            <Link
-              href="/auth/forgot-password"
-              className="text-sm text-yellow-600 font-medium hover:underline"
-            >
-              ¿Olvidaste tu contraseña?
-            </Link>
-          </div>
         </form>
 
         <p className="text-sm text-gray-600 text-center mt-6">
-          ¿No tienes cuenta?{" "}
-          <Link href="/auth/register" className="text-yellow-600 font-semibold hover:underline">
-            Regístrate
+          ¿Ya tienes cuenta?{" "}
+          <Link href="/auth/login" className="text-yellow-600 font-semibold hover:underline">
+            Inicia sesión
           </Link>
         </p>
       </div>
