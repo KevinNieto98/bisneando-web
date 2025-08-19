@@ -1,7 +1,18 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
+  const router = useRouter();
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+     router.push("/"); 
+
+    // Aquí puedes manejar el envío del formulario
+  };
+
   return (
     <div className="relative flex items-center justify-center min-h-screen bg-gradient-to-r from-yellow-400 to-yellow-500 overflow-hidden">
       
@@ -31,7 +42,7 @@ export default function LoginPage() {
           Iniciar Sesión
         </h2>
 
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
             <label className="block text-gray-700 font-medium">Correo</label>
             <input
@@ -51,6 +62,7 @@ export default function LoginPage() {
           </div>
 
           <button
+ 
             type="submit"
             className="w-full bg-yellow-500 text-white py-2 rounded-lg font-semibold hover:bg-yellow-600 transition duration-300"
           >

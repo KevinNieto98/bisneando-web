@@ -10,6 +10,7 @@ import {
   IoCubeOutline,
   IoWalletOutline,
   IoPricetagOutline,
+  IoArrowBack, // 👈 Importado el ícono de regresar
 } from "react-icons/io5";
 
 // Utilidades: formatear Lempiras y fecha
@@ -63,7 +64,18 @@ const statusMap = {
 export default function OrdersPage({ orders = demoOrders as Order[] }: { orders?: Order[] }) {
   return (
     <div className="space-y-6 mb-10">
-      <Title title="Orders" />
+      
+      {/* Header con título y botón de regresar */}
+      <div className="flex items-center justify-between">
+        <Title title="Orders" />
+        <Link
+          href="/products"
+          className="inline-flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 transition"
+        >
+          <IoArrowBack className="h-4 w-4" />
+          Regresar
+        </Link>
+      </div>
 
       {/* Grid de tarjetas */}
       <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
