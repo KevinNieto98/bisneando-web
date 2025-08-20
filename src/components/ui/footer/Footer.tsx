@@ -19,9 +19,9 @@ export const Footer = () => {
         <div>
           <h3 className="font-semibold text-lg mb-4">Términos y Condiciones</h3>
           <ul className="space-y-2 text-sm">
-            <li><Link href="/politicas" className="hover:underline">Políticas de Envío</Link></li>
-            <li><Link href="/privacidad" className="hover:underline">Política de Privacidad</Link></li>
-            <li><Link href="/terminos" className="hover:underline">Términos y Condiciones</Link></li>
+            <li><Link href="/shipping-policy" className="hover:underline">Políticas de Envío</Link></li>
+            <li><Link href="/privacy-policy" className="hover:underline">Política de Privacidad</Link></li>
+            <li><Link href="/terms-and-conditions" className="hover:underline">Términos y Condiciones</Link></li>
           </ul>
         </div>
 

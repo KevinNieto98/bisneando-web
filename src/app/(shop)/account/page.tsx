@@ -130,11 +130,22 @@ export default function EditProfilePage() {
           </div>
         </div>
 
-        {/* Botón Guardar cambios al final */}
-        <div className="pt-6 mt-8">
-          <button type="submit" className="w-full rounded-full bg-yellow-500 py-2 font-semibold text-white hover:bg-yellow-600 transition">
+        {/* Botones finales */}
+        <div className="pt-6 mt-8 space-y-4">
+          <button
+            type="submit"
+            className="w-full rounded-full bg-yellow-500 py-2 font-semibold text-white hover:bg-yellow-600 transition"
+          >
             Guardar cambios
           </button>
+
+          {/* Botón Cambiar contraseña */}
+          <Link
+            href="/account/change-password"
+            className="block w-full text-center rounded-full border border-yellow-500 py-2 font-semibold text-yellow-600 hover:bg-yellow-50 transition"
+          >
+            Cambiar contraseña
+          </Link>
         </div>
       </div>
     </div>

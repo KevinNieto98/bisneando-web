@@ -151,7 +151,7 @@ export const Sidebar = () => {
             </Link>
 
             <Link
-              href="/legal/terminos"
+              href="/legal-menu"
               onClick={closeMenu}
               className="flex items-center gap-3 rounded-xl p-3 text-zinc-800 transition hover:bg-zinc-50"
             >

@@ -12,7 +12,7 @@ export default function TermsAndConditionsPage() {
           Términos y Condiciones
         </h1>
         <Link
-          href="/"
+          href="/legal-menu"
           className="inline-flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 transition"
         >
           <IoArrowBack className="h-4 w-4" />
