@@ -24,7 +24,7 @@ export const TopMenu = () => {
   }, []);
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <nav className="sticky top-0 z-50 w-full  bg-[#FACC15]  backdrop-blur ">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2">
         {/* Logo */}
         <Link href="/" aria-label="Ir al inicio" className="inline-flex items-center">
